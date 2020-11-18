@@ -23,7 +23,7 @@ COPYRIGHT_YEAR = "Hier, aujourd'hui et demain"
 MAIN_MENU = True
 DISABLE_URL_HASH = True
 
-STATIC_PATHS = ["extra/cbrunet.css"]
+STATIC_PATHS = ["extra/cbrunet.css", "images/cbrunet.jpg"]
 EXTRA_PATH_METADATA = {
     "extra/cbrunet.css": {"path": "static/cbrunet.css"},
 }
