@@ -16,6 +16,6 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Build docs
-      run: invoke gh_pages
+      run: invoke gh-pages
     - name: Publish docs
       run: git push -f "https://${GITHUB_ACTOR}:${{secrets.TOKEN}}@github.com/${GITHUB_REPOSITORY}.git" gh-pages:gh-pages
