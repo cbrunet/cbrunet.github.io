@@ -1,0 +1,18 @@
+dt {
+    padding-top: 1ex;
+}
+
+.prayer p {
+    white-space: pre;
+    padding-left: 5em;
+    font-style: italic;
+}
+.prayer p::first-letter {
+    display: block;
+    float: left;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: red;
+    padding-right: 0.2ex;
+    margin-left: -0.2em;
+}
