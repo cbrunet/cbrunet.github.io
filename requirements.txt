@@ -1,4 +1,4 @@
-gph-import
+ghp-import
 invoke
 livereload
 markdown

@@ -3,7 +3,7 @@ on:
   push:
     branches: [ master ]
 jobs:
-  docs:
+  publish:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -14,9 +14,7 @@ jobs:
       with:
         python-version: '3.8'
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      run: pip install -r requirements.txt
     - name: Build docs
       run: invoke gh_pages
     - name: Publish docs
