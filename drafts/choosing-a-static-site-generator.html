@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://cbrunet.github.io/theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://cbrunet.github.io/static/cbrunet.css" rel="stylesheet">
+
+    <link href="https://cbrunet.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Charles Brunet Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#33300">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#33300">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#33300">
+
+<meta name="author" content="Charles Brunet" />
+<meta name="description" content="reStructuredText vs Markdown At first, it wasn’t clear to me whether I should write the articles using the rst or the md syntax. I did not find any good advices on the topic when I searched the web. I though that since rst was native to Pelican, while md …" />
+<meta name="keywords" content="">
+
+
+<meta property="og:site_name" content="Charles Brunet"/>
+<meta property="og:title" content="Choosing a Static Site Generator"/>
+<meta property="og:description" content="reStructuredText vs Markdown At first, it wasn’t clear to me whether I should write the articles using the rst or the md syntax. I did not find any good advices on the topic when I searched the web. I though that since rst was native to Pelican, while md …"/>
+<meta property="og:locale" content="fr_CA"/>
+<meta property="og:url" content="https://cbrunet.github.io/drafts/choosing-a-static-site-generator.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-02-21 04:04:51.674771-05:00"/>
+<meta property="article:modified_time" content="2021-02-21 04:04:51.674771-05:00"/>
+<meta property="article:author" content="https://cbrunet.github.io/author/charles-brunet.html">
+<meta property="article:section" content="pelican"/>
+<meta property="og:image" content="/images/cbrunet.jpg">
+
+  <title>Charles Brunet &ndash; Choosing a Static Site Generator</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://cbrunet.github.io">
+        <img src="/images/cbrunet.jpg" alt="Charles Brunet" title="Charles Brunet">
+      </a>
+
+      <h1>
+        <a href="https://cbrunet.github.io">Charles Brunet</a>
+      </h1>
+
+<p>Me, myself, and I</p>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/a-propos-de-moi.html">
+                  À propos de&nbsp;moi
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/curiculum-vitae.html">
+                  Curiculum&nbsp;vitæ
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/publications.html">
+                  Publications
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/cbrunet" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-stack-overflow" href="https://stackoverflow.com/users/621944/charles-brunet" target="_blank">
+              <i class="fab fa-stack-overflow"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/charlesbrunet/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://cbrunet.github.io">Accueil</a>
+
+      <a href="/pages/mariage.html">Mariage</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Catégories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://cbrunet.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="choosing-a-static-site-generator">Choosing a Static Site&nbsp;Generator</h1>
+    <p>
+      Posté le Sun 21 February 2021 dans <a href="https://cbrunet.github.io/category/pelican.html">pelican</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1>reStructuredText vs&nbsp;Markdown</h1>
+<p>At first, it wasn&#8217;t clear to me whether I should write the articles using the rst or the md syntax.
+I did not find any good advices on the topic when I searched the web.
+I though that since rst was native to Pelican, while md needs another package,
+rst should be the best choice. Isn&#8217;t it the syntax used by Sphinx? And it can easily be
+customized, while md need extensions to do similar&nbsp;things.</p>
+<p>However, I didn&#8217;t wrote a complete article before I realised that rst syntax was cumbersome
+compared to md. For instance, I cannot have two links with the same name in rst. 
+I quickly realized that it was faster and easier to write my articles using md than using&nbsp;rst.</p>
+<p>But the good thing is that if I change my mind, or if I need to use rst for some reason one day,
+Pelican can still handle it. Therefore, the choice is not a real one: I can use&nbsp;both!</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Hier, aujourd'hui et demain </p>
+<p>
+Construit avec <a href="http://getpelican.com" target="_blank">Pelican</a> utilisant le thème <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Charles Brunet ",
+  "url" : "https://cbrunet.github.io",
+  "image": "/images/cbrunet.jpg",
+  "description": "Le site de Charles Brunet website"
+}
+</script>
+
+
+</body>
+</html>

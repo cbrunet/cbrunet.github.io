@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://cbrunet.github.io/theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://cbrunet.github.io/static/cbrunet.css" rel="stylesheet">
+
+    <link href="https://cbrunet.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Charles Brunet Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#33300">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#33300">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#33300">
+
+<meta name="author" content="Charles Brunet" />
+<meta name="description" content="I recently needed to choose a file format for a complex software configuration. I decided to use YAML. In this post, I explaned why I choose it, and what I learned about it. Choosing the right format for configuration file There are plenty of file formats that exist and can …" />
+<meta name="keywords" content="">
+
+
+<meta property="og:site_name" content="Charles Brunet"/>
+<meta property="og:title" content="Yet Another Markup Language"/>
+<meta property="og:description" content="I recently needed to choose a file format for a complex software configuration. I decided to use YAML. In this post, I explaned why I choose it, and what I learned about it. Choosing the right format for configuration file There are plenty of file formats that exist and can …"/>
+<meta property="og:locale" content="fr_CA"/>
+<meta property="og:url" content="https://cbrunet.github.io/yet-another-markup-language.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-02-21 04:04:51.674771-05:00"/>
+<meta property="article:modified_time" content="2021-02-21 04:04:51.674771-05:00"/>
+<meta property="article:author" content="https://cbrunet.github.io/author/charles-brunet.html">
+<meta property="article:section" content="technologies"/>
+<meta property="og:image" content="/images/cbrunet.jpg">
+
+  <title>Charles Brunet &ndash; Yet Another Markup Language</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://cbrunet.github.io">
+        <img src="/images/cbrunet.jpg" alt="Charles Brunet" title="Charles Brunet">
+      </a>
+
+      <h1>
+        <a href="https://cbrunet.github.io">Charles Brunet</a>
+      </h1>
+
+<p>Me, myself, and I</p>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/a-propos-de-moi.html">
+                  À propos de&nbsp;moi
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/curiculum-vitae.html">
+                  Curiculum&nbsp;vitæ
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/publications.html">
+                  Publications
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/cbrunet" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-stack-overflow" href="https://stackoverflow.com/users/621944/charles-brunet" target="_blank">
+              <i class="fab fa-stack-overflow"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/charlesbrunet/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://cbrunet.github.io">Accueil</a>
+
+      <a href="/pages/mariage.html">Mariage</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Catégories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://cbrunet.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="yet-another-markup-language">Yet Another Markup&nbsp;Language</h1>
+    <p>
+      Posté le Sun 21 February 2021 dans <a href="https://cbrunet.github.io/category/technologies.html">technologies</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>I recently needed to choose a file format for a complex software configuration.
+I decided to use <span class="caps">YAML</span>. In this post, I explaned why I choose it,
+and what I learned about&nbsp;it.</p>
+<h2>Choosing the right format for configuration&nbsp;file</h2>
+<p>There are plenty of file formats that exist and can be used to store a software configuration.
+If its not enough, it is easy to create a custom format. But who wants another&nbsp;standard?</p>
+<p><a href="https://xkcd.com/927/"><img alt="xkcd 927" src="https://imgs.xkcd.com/comics/standards.png" title="Fortunately, the charging one has been solved now that we've all standardized on mini-USB. Or is it micro-USB? Shit."></a></p>
+<p>(Source: <a href="https://xkcd.com/927/">https://xkcd.com/927/</a>)</p>
+<p>The <a href="https://en.wikipedia.org/wiki/INI_file">ini file</a> is very common, and used very frequently.
+In Python, it is easy to manipulate using <a href="https://docs.python.org/3/library/configparser.html">configparser</a>.
+In Qt, it can be used with the <a href="https://doc.qt.io/qt-5/qsettings.html">QSettings</a> class.
+It is so common that each software has its own interpretation of what the ini file specification should be.
+It can be a good choice if you need a simple key/value storage, but if your configuration becomes
+more complex, you end up creating conventions over the ini file, and you finish by creating a new
+file format based on&nbsp;ini.</p>
+<p><a href="https://toml.io/en/"><span class="caps">TOML</span></a> can be see as a superset of the ini file. But the syntax is well defined,
+and it allow more complex representations. In fact, it almost looks like Python code.
+This format was <a href="https://www.python.org/dev/peps/pep-0518/#file-format">chosen to store build system dependencies in Python</a>.</p>
+<p><span class="caps">JSON</span> is a very popular format these days, mainly because it is the standard (a native) format for JavaScript.
+Therefore, it can be parsed very quickly in the context of a JavaScript application.
+However, it is less human-friendly, because you cannot really add comments to it,
+and because you need a tool to format it if you want to be able to understand its&nbsp;structure.</p>
+<p><a href="https://yaml.org/"><span class="caps">YAML</span></a> it a superset of <span class="caps">JSON</span>. It means that a <span class="caps">YAML</span> parser can read <span class="caps">JSON</span>
+(but not the opposite: a <span class="caps">JSON</span> parser cannot read <span class="caps">YAML</span>). While more complex (and powerful)
+than the other format, I do not agree that it is complicated and error prone for humans.
+You only need to be able to indent text, and know the difference between a list and a map.
+With those two concepts, you should be able to work with yaml.
+We see <span class="caps">YAML</span> as the config language of many <span class="caps">CI</span>, such as GitHub Action, GitLab <span class="caps">CI</span>,&nbsp;Travis&#8230;</p>
+<p>Finally, I put <span class="caps">XML</span> here for historical reasons. But you don&#8217;t want to work with <span class="caps">XML</span>, do&nbsp;you?</p>
+<p>When working with Python, another option is to use native Python script as a configuration file.
+This is what <a href="https://www.sphinx-doc.org/en/master/">Sphinx</a> uses,
+and also what <a href="https://blog.getpelican.com/">Pelican</a> uses. But in the context of a C++ application,
+or with any other compiled language, this is not really a&nbsp;option&#8230;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">ini</th>
+<th align="center">toml</th>
+<th align="center">json</th>
+<th align="center">yaml</th>
+<th align="center">xml</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Well defined</td>
+<td align="center"></td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td>Allow comments</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center"></td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td><del>Easy</del> <ins>Fun</ins> to edit by a human</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center"></td>
+<td align="center">✓</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Allow nested structures</td>
+<td align="center"></td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+</tbody>
+</table>
+<h2>Libraries to parse <span class="caps">YAML</span></h2>
+<p>With Python, <a href="https://pyyaml.org/wiki/PyYAMLDocumentation">pyyaml</a> does a pretty decent job.
+However, it doesn&#8217;t fully support <span class="caps">YAML</span> 1.2&nbsp;yet.</p>
+<p>In C++, there is <a href="https://github.com/jbeder/yaml-cpp">yaml-cpp</a>.
+It support <span class="caps">YAML</span> 1.2. However, it has a few&nbsp;problems:</p>
+<ul>
+<li>It causes warnings in C++17 because it derives from std::iterator [ <a href="https://github.com/jbeder/yaml-cpp/issues/946">issue #946</a>&nbsp;]</li>
+<li>It cannot interfer scalar types correctly, because it doesn&#8217;t distinguish between quoted and unquoted scalars [ <a href="https://github.com/jbeder/ yaml-cpp/issues/261">issue #261</a>&nbsp;]</li>
+</ul>
+<p>There is also <a href="https://github.com/biojppm/rapidyaml">Rapid <span class="caps">YAML</span></a> that seems promising. <del>However, it is not really usable
+in a projet yet since it is not versionned and has no official releases.</del> 
+<ins datetime="2020-11-02">It now has a first official release, but <span class="caps">API</span> is not stable yet.</ins></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Hier, aujourd'hui et demain </p>
+<p>
+Construit avec <a href="http://getpelican.com" target="_blank">Pelican</a> utilisant le thème <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Charles Brunet ",
+  "url" : "https://cbrunet.github.io",
+  "image": "/images/cbrunet.jpg",
+  "description": "Le site de Charles Brunet website"
+}
+</script>
+
+
+</body>
+</html>

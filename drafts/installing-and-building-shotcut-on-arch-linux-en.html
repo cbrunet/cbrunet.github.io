@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://cbrunet.github.io/theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://cbrunet.github.io/static/cbrunet.css" rel="stylesheet">
+
+    <link href="https://cbrunet.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Charles Brunet Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#33300">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#33300">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#33300">
+
+<meta name="author" content="Charles Brunet" />
+<meta name="description" content="Choosing the right software I recently needed a video editing software, for a little project. Therefore, I looked at what was currently available on the Linux world. I quickly eliminated DaVinci Resolve and Lightworks, because they are proprietary softwares, limited in their free version. I don’t want to be …" />
+<meta name="keywords" content="">
+
+
+<meta property="og:site_name" content="Charles Brunet"/>
+<meta property="og:title" content="Installing and Building Shotcut on Arch Linux"/>
+<meta property="og:description" content="Choosing the right software I recently needed a video editing software, for a little project. Therefore, I looked at what was currently available on the Linux world. I quickly eliminated DaVinci Resolve and Lightworks, because they are proprietary softwares, limited in their free version. I don’t want to be …"/>
+<meta property="og:locale" content="fr_CA"/>
+<meta property="og:url" content="https://cbrunet.github.io/drafts/installing-and-building-shotcut-on-arch-linux-en.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-02-21 04:04:51.674771-05:00"/>
+<meta property="article:modified_time" content="2021-02-21 04:04:51.674771-05:00"/>
+<meta property="article:author" content="https://cbrunet.github.io/author/charles-brunet.html">
+<meta property="article:section" content="shotcut"/>
+<meta property="og:image" content="/images/cbrunet.jpg">
+
+  <title>Charles Brunet &ndash; Installing and Building Shotcut on Arch Linux</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://cbrunet.github.io">
+        <img src="/images/cbrunet.jpg" alt="Charles Brunet" title="Charles Brunet">
+      </a>
+
+      <h1>
+        <a href="https://cbrunet.github.io">Charles Brunet</a>
+      </h1>
+
+<p>Me, myself, and I</p>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/a-propos-de-moi.html">
+                  À propos de&nbsp;moi
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/curiculum-vitae.html">
+                  Curiculum&nbsp;vitæ
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/publications.html">
+                  Publications
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/cbrunet" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-stack-overflow" href="https://stackoverflow.com/users/621944/charles-brunet" target="_blank">
+              <i class="fab fa-stack-overflow"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/charlesbrunet/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://cbrunet.github.io">Accueil</a>
+
+      <a href="/pages/mariage.html">Mariage</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Catégories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://cbrunet.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="installing-and-building-shotcut-on-arch-linux">Installing and Building Shotcut on Arch&nbsp;Linux</h1>
+    <p>
+      Posté le Sun 21 February 2021 dans <a href="https://cbrunet.github.io/category/shotcut.html">shotcut</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1>Choosing the right&nbsp;software</h1>
+<p>I recently needed a video editing software, for a little project. 
+Therefore, I looked at what was currently available on the Linux world.
+I quickly eliminated <em>DaVinci Resolve</em> and <em>Lightworks</em>, because they are
+proprietary softwares, limited in their free version. I don&#8217;t want to
+be limited in features, and I don&#8217;t like installing a closed source software on
+Linux. I saw many comments telling that <em>Blender</em> was the best open source
+option on Linux. But using a 3D modeler for video editing sounds odd to me,
+and my experience with Blender is that it has a steep learning curve. I
+wanted something more&nbsp;conventional.</p>
+<p><em>OpenShot</em> was appealing, because it is written in Python.
+But it seemed a little slow on my old computer.
+And the interface seems a little too simplist for me.
+For instance, when you insert text, you need to choose a predefined text layouts,
+where you can adjuste the text itself and the color.
+In fact, you can customize it further, but you need to use a svg editor like InkScape.
+The software seems a very simple facade, but includes some very technical details,
+in the properties window for instance. What I definitively like is
+the possibility to add transitions between two different video tracks.
+I still keep an eye on this software, but it is devinitively not my first choice for&nbsp;now.</p>
+<p>I also gave a quick try to <em>Kdenlive</em>, but I definitively found the interface too bloated.
+I doesn&#8217;t allow in-track transitions: you always need to perform transitions between
+two different&nbsp;tracks.</p>
+<p>I successfully created some videos using <em>Shotcut</em>. 
+It seemed more stable and faster than other video editors, and it has all the basic
+features I needed. However, it is still in active development, and some features are missing
+(like the ability to change the track&nbsp;order).</p>
+<h1>Installation on Arch&nbsp;Linux</h1>
+<p>An up-to-date package is available: <a href="https://www.archlinux.org/packages/community/x86_64/shotcut/">shotcut</a>.
+It is based on Qt, and on the <span class="caps">MLT</span> framework (in fact, the Shotcut developer is one of the <span class="caps">MLT</span>&nbsp;developers).</p>
+<p>The software is translated in many languages. I was surprised to see that some translations were missing for very
+basic commands (like Undo / Redo), until I realised I needed the
+<a href="https://www.archlinux.org/packages/extra/any/qt5-translations/">qt5-translations</a>&nbsp;package.</p>
+<p>I also realized many filters were missing. Digging further, I found that the missing filters
+were all the filters based on the <em>webvfx</em> library. Unfortunately, this lib was not available on Arch Linux.
+Therefore, I packaged it on <span class="caps">AUR</span>: <a href="https://aur.archlinux.org/packages/webvfx/">webvfx</a>.
+I also <a href="https://bugs.archlinux.org/task/66654">filled a bug</a>
+to the shotcut package maintainer on Arch, to see if he would include it in the&nbsp;future.</p>
+<h1>Building from&nbsp;source</h1>
+<p>Buiding from sources is not complicated, since all needed dependencies were already installed
+by the shotcut package. The Arch package has one patch, to replace the <em>qmelt</em> executable by
+the <em>melt</em> executable. <em>melt</em> is a command line tool to interface the <em><span class="caps">MLT</span></em> library. It is
+included in the <em>mlt</em> package. <em>qmelt</em> is a simple Qt wrapper for <em>melt</em>. As I understand,
+it is needed on Mac <span class="caps">OS</span> and on Windows, but not on Linux. <em>qmelt</em> is provided by <em>webvfx</em>.
+This is why it is not there with the original shotcut&nbsp;package.</p>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/mltframework/shotcut.git
+$ <span class="nb">cd</span> shotcut
+$ mkdir build
+$ <span class="nb">cd</span> build
+$ qmake ..
+$ make
+</code></pre></div>
+
+<p>The <span class="caps">README</span> file says the simplest way to run the compiled version is to directly
+call <code>./src/shotcut</code>. However, I realised I first needed to symlink the qml&nbsp;files:</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> share/shotcut
+$ ln -s ../../../src/qml
+$ <span class="nb">cd</span> -
+$ ./src/shotcut
+</code></pre></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Hier, aujourd'hui et demain </p>
+<p>
+Construit avec <a href="http://getpelican.com" target="_blank">Pelican</a> utilisant le thème <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Charles Brunet ",
+  "url" : "https://cbrunet.github.io",
+  "image": "/images/cbrunet.jpg",
+  "description": "Le site de Charles Brunet website"
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Charles Brunet - technologies</title><link href="https://cbrunet.github.io/" rel="alternate"></link><link href="https://cbrunet.github.io/feeds/technologies.atom.xml" rel="self"></link><id>https://cbrunet.github.io/</id><updated>2021-02-21T04:04:51-05:00</updated><subtitle>Me, myself, and I</subtitle><entry><title>Yet Another Markup Language</title><link href="https://cbrunet.github.io/yet-another-markup-language.html" rel="alternate"></link><published>2021-02-21T04:04:51-05:00</published><updated>2021-02-21T04:04:51-05:00</updated><author><name>Charles Brunet</name></author><id>tag:cbrunet.github.io,2021-02-21:/yet-another-markup-language.html</id><summary type="html">&lt;p&gt;I recently needed to choose a file format for a complex software configuration.
+I decided to use &lt;span class="caps"&gt;YAML&lt;/span&gt;. In this post, I explaned why I choose it,
+and what I learned about&amp;nbsp;it.&lt;/p&gt;
+&lt;h2&gt;Choosing the right format for configuration&amp;nbsp;file&lt;/h2&gt;
+&lt;p&gt;There are plenty of file formats that exist and can …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently needed to choose a file format for a complex software configuration.
+I decided to use &lt;span class="caps"&gt;YAML&lt;/span&gt;. In this post, I explaned why I choose it,
+and what I learned about&amp;nbsp;it.&lt;/p&gt;
+&lt;h2&gt;Choosing the right format for configuration&amp;nbsp;file&lt;/h2&gt;
+&lt;p&gt;There are plenty of file formats that exist and can be used to store a software configuration.
+If its not enough, it is easy to create a custom format. But who wants another&amp;nbsp;standard?&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://xkcd.com/927/"&gt;&lt;img alt="xkcd 927" src="https://imgs.xkcd.com/comics/standards.png" title="Fortunately, the charging one has been solved now that we've all standardized on mini-USB. Or is it micro-USB? Shit."&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;(Source: &lt;a href="https://xkcd.com/927/"&gt;https://xkcd.com/927/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/INI_file"&gt;ini file&lt;/a&gt; is very common, and used very frequently.
+In Python, it is easy to manipulate using &lt;a href="https://docs.python.org/3/library/configparser.html"&gt;configparser&lt;/a&gt;.
+In Qt, it can be used with the &lt;a href="https://doc.qt.io/qt-5/qsettings.html"&gt;QSettings&lt;/a&gt; class.
+It is so common that each software has its own interpretation of what the ini file specification should be.
+It can be a good choice if you need a simple key/value storage, but if your configuration becomes
+more complex, you end up creating conventions over the ini file, and you finish by creating a new
+file format based on&amp;nbsp;ini.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://toml.io/en/"&gt;&lt;span class="caps"&gt;TOML&lt;/span&gt;&lt;/a&gt; can be see as a superset of the ini file. But the syntax is well defined,
+and it allow more complex representations. In fact, it almost looks like Python code.
+This format was &lt;a href="https://www.python.org/dev/peps/pep-0518/#file-format"&gt;chosen to store build system dependencies in Python&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;JSON&lt;/span&gt; is a very popular format these days, mainly because it is the standard (a native) format for JavaScript.
+Therefore, it can be parsed very quickly in the context of a JavaScript application.
+However, it is less human-friendly, because you cannot really add comments to it,
+and because you need a tool to format it if you want to be able to understand its&amp;nbsp;structure.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://yaml.org/"&gt;&lt;span class="caps"&gt;YAML&lt;/span&gt;&lt;/a&gt; it a superset of &lt;span class="caps"&gt;JSON&lt;/span&gt;. It means that a &lt;span class="caps"&gt;YAML&lt;/span&gt; parser can read &lt;span class="caps"&gt;JSON&lt;/span&gt;
+(but not the opposite: a &lt;span class="caps"&gt;JSON&lt;/span&gt; parser cannot read &lt;span class="caps"&gt;YAML&lt;/span&gt;). While more complex (and powerful)
+than the other format, I do not agree that it is complicated and error prone for humans.
+You only need to be able to indent text, and know the difference between a list and a map.
+With those two concepts, you should be able to work with yaml.
+We see &lt;span class="caps"&gt;YAML&lt;/span&gt; as the config language of many &lt;span class="caps"&gt;CI&lt;/span&gt;, such as GitHub Action, GitLab &lt;span class="caps"&gt;CI&lt;/span&gt;,&amp;nbsp;Travis&amp;#8230;&lt;/p&gt;
+&lt;p&gt;Finally, I put &lt;span class="caps"&gt;XML&lt;/span&gt; here for historical reasons. But you don&amp;#8217;t want to work with &lt;span class="caps"&gt;XML&lt;/span&gt;, do&amp;nbsp;you?&lt;/p&gt;
+&lt;p&gt;When working with Python, another option is to use native Python script as a configuration file.
+This is what &lt;a href="https://www.sphinx-doc.org/en/master/"&gt;Sphinx&lt;/a&gt; uses,
+and also what &lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; uses. But in the context of a C++ application,
+or with any other compiled language, this is not really a&amp;nbsp;option&amp;#8230;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align="center"&gt;ini&lt;/th&gt;
+&lt;th align="center"&gt;toml&lt;/th&gt;
+&lt;th align="center"&gt;json&lt;/th&gt;
+&lt;th align="center"&gt;yaml&lt;/th&gt;
+&lt;th align="center"&gt;xml&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Well defined&lt;/td&gt;
+&lt;td align="center"&gt;&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Allow comments&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;del&gt;Easy&lt;/del&gt; &lt;ins&gt;Fun&lt;/ins&gt; to edit by a human&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Allow nested structures&lt;/td&gt;
+&lt;td align="center"&gt;&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;td align="center"&gt;✓&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Libraries to parse &lt;span class="caps"&gt;YAML&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;With Python, &lt;a href="https://pyyaml.org/wiki/PyYAMLDocumentation"&gt;pyyaml&lt;/a&gt; does a pretty decent job.
+However, it doesn&amp;#8217;t fully support &lt;span class="caps"&gt;YAML&lt;/span&gt; 1.2&amp;nbsp;yet.&lt;/p&gt;
+&lt;p&gt;In C++, there is &lt;a href="https://github.com/jbeder/yaml-cpp"&gt;yaml-cpp&lt;/a&gt;.
+It support &lt;span class="caps"&gt;YAML&lt;/span&gt; 1.2. However, it has a few&amp;nbsp;problems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It causes warnings in C++17 because it derives from std::iterator [ &lt;a href="https://github.com/jbeder/yaml-cpp/issues/946"&gt;issue #946&lt;/a&gt;&amp;nbsp;]&lt;/li&gt;
+&lt;li&gt;It cannot interfer scalar types correctly, because it doesn&amp;#8217;t distinguish between quoted and unquoted scalars [ &lt;a href="https://github.com/jbeder/ yaml-cpp/issues/261"&gt;issue #261&lt;/a&gt;&amp;nbsp;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is also &lt;a href="https://github.com/biojppm/rapidyaml"&gt;Rapid &lt;span class="caps"&gt;YAML&lt;/span&gt;&lt;/a&gt; that seems promising. &lt;del&gt;However, it is not really usable
+in a projet yet since it is not versionned and has no official releases.&lt;/del&gt; 
+&lt;ins datetime="2020-11-02"&gt;It now has a first official release, but &lt;span class="caps"&gt;API&lt;/span&gt; is not stable yet.&lt;/ins&gt;&lt;/p&gt;</content><category term="technologies"></category></entry></feed>

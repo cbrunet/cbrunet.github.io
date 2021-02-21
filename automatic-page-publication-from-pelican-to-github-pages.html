@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://cbrunet.github.io/theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://cbrunet.github.io/theme/font-awesome/css/solid.css">
+
+    <link href="https://cbrunet.github.io/static/cbrunet.css" rel="stylesheet">
+
+    <link href="https://cbrunet.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Charles Brunet Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#33300">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#33300">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#33300">
+
+<meta name="author" content="Charles Brunet" />
+<meta name="description" content="I want to automatically generate and publish the website when I push a modification to the master branch of the GitHub repository. The tasks.py script already includes a task to help publishing to gh-pages. To use it, we need to install invoke. The gp-pages task also need the ghp-import …" />
+<meta name="keywords" content="pelican, gh-pages, gh-actions">
+
+
+<meta property="og:site_name" content="Charles Brunet"/>
+<meta property="og:title" content="Automatic page publication from Pelican to GitHub Pages"/>
+<meta property="og:description" content="I want to automatically generate and publish the website when I push a modification to the master branch of the GitHub repository. The tasks.py script already includes a task to help publishing to gh-pages. To use it, we need to install invoke. The gp-pages task also need the ghp-import …"/>
+<meta property="og:locale" content="fr_CA"/>
+<meta property="og:url" content="https://cbrunet.github.io/automatic-page-publication-from-pelican-to-github-pages.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-02-21 04:04:51.674771-05:00"/>
+<meta property="article:modified_time" content="2021-02-21 04:04:51.674771-05:00"/>
+<meta property="article:author" content="https://cbrunet.github.io/author/charles-brunet.html">
+<meta property="article:section" content="pelican"/>
+<meta property="article:tag" content="pelican"/>
+<meta property="article:tag" content="gh-pages"/>
+<meta property="article:tag" content="gh-actions"/>
+<meta property="og:image" content="/images/cbrunet.jpg">
+
+  <title>Charles Brunet &ndash; Automatic page publication from Pelican to GitHub Pages</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="https://cbrunet.github.io">
+        <img src="/images/cbrunet.jpg" alt="Charles Brunet" title="Charles Brunet">
+      </a>
+
+      <h1>
+        <a href="https://cbrunet.github.io">Charles Brunet</a>
+      </h1>
+
+<p>Me, myself, and I</p>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/a-propos-de-moi.html">
+                  À propos de&nbsp;moi
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/curiculum-vitae.html">
+                  Curiculum&nbsp;vitæ
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="https://cbrunet.github.io/pages/publications.html">
+                  Publications
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/cbrunet" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-stack-overflow" href="https://stackoverflow.com/users/621944/charles-brunet" target="_blank">
+              <i class="fab fa-stack-overflow"></i>
+            </a>
+          </li>
+          <li>
+            <a  class="sc-linkedin" href="https://www.linkedin.com/in/charlesbrunet/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://cbrunet.github.io">Accueil</a>
+
+      <a href="/pages/mariage.html">Mariage</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Catégories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://cbrunet.github.io/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="automatic-page-publication-from-pelican-to-github-pages">Automatic page publication from Pelican to GitHub&nbsp;Pages</h1>
+    <p>
+      Posté le Sun 21 February 2021 dans <a href="https://cbrunet.github.io/category/pelican.html">pelican</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>I want to automatically generate and publish the website when I push a modification to the master branch
+of the GitHub&nbsp;repository.</p>
+<p>The <code>tasks.py</code> script already includes a task to help publishing to gh-pages.
+To use it, we need to install <code>invoke</code>. The <code>gp-pages</code> task also need the
+<a href="https://github.com/c-w/ghp-import"><code>ghp-import</code></a> package.
+Finally, while we do not need it for the publication task, the <code>livereload</code> package
+is useful for development, to allow calling <code>invoke livereload</code>.</p>
+<p>Here is my <code>requirements.txt</code> file, will all those dependencies, and a few others I use for my&nbsp;site:</p>
+<div class="highlight"><pre><span></span><code><span class="err">ghp-import</span>
+<span class="err">invoke</span>
+<span class="err">livereload</span>
+<span class="err">markdown</span>
+<span class="err">pelican</span>
+<span class="err">typogrify</span>
+</code></pre></div>
+
+<p>On GitHub, the <code>master</code> branch contains the sources of the site, and the <code>gh-pages</code> branch
+contains the published website. There are other ways to do it, for instance by publishing
+a subdirectory as the website, but I prefer to work with different branches. 
+The <code>ghp-import</code> package makes it easy to manage the <code>gh-pages</code> branch.</p>
+<p>I tweaked a little bit the <code>tasks.py</code> file. First, I set the name of the branch where to&nbsp;publish:</p>
+<div class="highlight"><pre><span></span><code>    <span class="s1">&#39;github_pages_branch&#39;</span><span class="p">:</span> <span class="s1">&#39;gh-pages&#39;</span><span class="p">,</span>
+</code></pre></div>
+
+<p>I also changed some options passed to the <code>ghp-import</code> script:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@task</span>
+<span class="k">def</span> <span class="nf">gh_pages</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Publish to GitHub Pages&quot;&quot;&quot;</span>
+    <span class="n">preview</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ghp-import -n -b </span><span class="si">{github_pages_branch}</span><span class="s1"> &#39;</span>
+          <span class="s1">&#39;-m </span><span class="si">{commit_message}</span><span class="s1"> &#39;</span>
+          <span class="s1">&#39;</span><span class="si">{deploy_path}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">CONFIG</span><span class="p">))</span>
+</code></pre></div>
+
+<p>I added the <code>-n</code> option to create the <code>.nojekyll</code> file. This tells GitHub to not invoke Jekyll
+on the generated contents. I removed the <code>-p</code> option, as I need to include credentials to publish
+the&nbsp;pages.</p>
+<p>Finally, here is the GitHub Actions&nbsp;configurations:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Publish Website</span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="nt">push</span><span class="p">:</span>
+  <span class="nt">branches</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">master</span> <span class="p p-Indicator">]</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="nt">publish</span><span class="p">:</span>
+  <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+  <span class="nt">steps</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+    <span class="nt">with</span><span class="p">:</span>
+      <span class="nt">submodules</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+    <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span>
+    <span class="nt">with</span><span class="p">:</span>
+      <span class="nt">python-version</span><span class="p">:</span> <span class="s">&#39;3.8&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+    <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build docs</span>
+    <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">invoke gh-pages</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Publish docs</span>
+    <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">git push -f &quot;https://${GITHUB_ACTOR}:${{secrets.TOKEN}}@github.com/${GITHUB_REPOSITORY}.git&quot; gh-pages:gh-pages</span>
+</code></pre></div>
+
+<p>The action run when I push to <code>master</code> branch.</p>
+<p>The checkout action tells to checkout submodules as well, as I use submodules for the Flex theme, and for&nbsp;pelican-plugins.</p>
+<p>I install Python packages from the requirements.txt&nbsp;file.</p>
+<p>I call the invoke task to create the (local) gh-pages branch with the published&nbsp;contents.</p>
+<p>Finally, I force push the gh-pages branch to GitHub, using the required&nbsp;credentials.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://cbrunet.github.io/tag/pelican.html">pelican</a>
+      <a href="https://cbrunet.github.io/tag/gh-pages.html">gh-pages</a>
+      <a href="https://cbrunet.github.io/tag/gh-actions.html">gh-actions</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Hier, aujourd'hui et demain </p>
+<p>
+Construit avec <a href="http://getpelican.com" target="_blank">Pelican</a> utilisant le thème <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Charles Brunet ",
+  "url" : "https://cbrunet.github.io",
+  "image": "/images/cbrunet.jpg",
+  "description": "Le site de Charles Brunet website"
+}
+</script>
+
+
+</body>
+</html>

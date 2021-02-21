@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Charles Brunet - pelican</title><link href="https://cbrunet.github.io/" rel="alternate"></link><link href="https://cbrunet.github.io/feeds/pelican.atom.xml" rel="self"></link><id>https://cbrunet.github.io/</id><updated>2021-02-21T04:04:51-05:00</updated><subtitle>Me, myself, and I</subtitle><entry><title>Automatic page publication from Pelican to GitHub Pages</title><link href="https://cbrunet.github.io/automatic-page-publication-from-pelican-to-github-pages.html" rel="alternate"></link><published>2021-02-21T04:04:51-05:00</published><updated>2021-02-21T04:04:51-05:00</updated><author><name>Charles Brunet</name></author><id>tag:cbrunet.github.io,2021-02-21:/automatic-page-publication-from-pelican-to-github-pages.html</id><summary type="html">&lt;p&gt;I want to automatically generate and publish the website when I push a modification to the master branch
+of the GitHub&amp;nbsp;repository.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;tasks.py&lt;/code&gt; script already includes a task to help publishing to gh-pages.
+To use it, we need to install &lt;code&gt;invoke&lt;/code&gt;. The &lt;code&gt;gp-pages&lt;/code&gt; task also need the
+&lt;a href="https://github.com/c-w/ghp-import"&gt;&lt;code&gt;ghp-import …&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;I want to automatically generate and publish the website when I push a modification to the master branch
+of the GitHub&amp;nbsp;repository.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;tasks.py&lt;/code&gt; script already includes a task to help publishing to gh-pages.
+To use it, we need to install &lt;code&gt;invoke&lt;/code&gt;. The &lt;code&gt;gp-pages&lt;/code&gt; task also need the
+&lt;a href="https://github.com/c-w/ghp-import"&gt;&lt;code&gt;ghp-import&lt;/code&gt;&lt;/a&gt; package.
+Finally, while we do not need it for the publication task, the &lt;code&gt;livereload&lt;/code&gt; package
+is useful for development, to allow calling &lt;code&gt;invoke livereload&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here is my &lt;code&gt;requirements.txt&lt;/code&gt; file, will all those dependencies, and a few others I use for my&amp;nbsp;site:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ghp-import&lt;/span&gt;
+&lt;span class="err"&gt;invoke&lt;/span&gt;
+&lt;span class="err"&gt;livereload&lt;/span&gt;
+&lt;span class="err"&gt;markdown&lt;/span&gt;
+&lt;span class="err"&gt;pelican&lt;/span&gt;
+&lt;span class="err"&gt;typogrify&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;On GitHub, the &lt;code&gt;master&lt;/code&gt; branch contains the sources of the site, and the &lt;code&gt;gh-pages&lt;/code&gt; branch
+contains the published website. There are other ways to do it, for instance by publishing
+a subdirectory as the website, but I prefer to work with different branches. 
+The &lt;code&gt;ghp-import&lt;/code&gt; package makes it easy to manage the &lt;code&gt;gh-pages&lt;/code&gt; branch.&lt;/p&gt;
+&lt;p&gt;I tweaked a little bit the &lt;code&gt;tasks.py&lt;/code&gt; file. First, I set the name of the branch where to&amp;nbsp;publish:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="s1"&gt;&amp;#39;github_pages_branch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;gh-pages&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I also changed some options passed to the &lt;code&gt;ghp-import&lt;/code&gt; script:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;gh_pages&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Publish to GitHub Pages&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;preview&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ghp-import -n -b &lt;/span&gt;&lt;span class="si"&gt;{github_pages_branch}&lt;/span&gt;&lt;span class="s1"&gt; &amp;#39;&lt;/span&gt;
+          &lt;span class="s1"&gt;&amp;#39;-m &lt;/span&gt;&lt;span class="si"&gt;{commit_message}&lt;/span&gt;&lt;span class="s1"&gt; &amp;#39;&lt;/span&gt;
+          &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{deploy_path}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;CONFIG&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I added the &lt;code&gt;-n&lt;/code&gt; option to create the &lt;code&gt;.nojekyll&lt;/code&gt; file. This tells GitHub to not invoke Jekyll
+on the generated contents. I removed the &lt;code&gt;-p&lt;/code&gt; option, as I need to include credentials to publish
+the&amp;nbsp;pages.&lt;/p&gt;
+&lt;p&gt;Finally, here is the GitHub Actions&amp;nbsp;configurations:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;Publish Website&lt;/span&gt;
+&lt;span class="nt"&gt;on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;push&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;branches&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;master&lt;/span&gt; &lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="nt"&gt;publish&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;runs-on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;ubuntu-latest&lt;/span&gt;
+  &lt;span class="nt"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;actions/checkout@v2&lt;/span&gt;
+    &lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="nt"&gt;submodules&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;Set up Python&lt;/span&gt;
+    &lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;actions/setup-python@v1&lt;/span&gt;
+    &lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="nt"&gt;python-version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;3.8&amp;#39;&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;Install dependencies&lt;/span&gt;
+    &lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pip install -r requirements.txt&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;Build docs&lt;/span&gt;
+    &lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;invoke gh-pages&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;Publish docs&lt;/span&gt;
+    &lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;git push -f &amp;quot;https://${GITHUB_ACTOR}:${{secrets.TOKEN}}@github.com/${GITHUB_REPOSITORY}.git&amp;quot; gh-pages:gh-pages&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The action run when I push to &lt;code&gt;master&lt;/code&gt; branch.&lt;/p&gt;
+&lt;p&gt;The checkout action tells to checkout submodules as well, as I use submodules for the Flex theme, and for&amp;nbsp;pelican-plugins.&lt;/p&gt;
+&lt;p&gt;I install Python packages from the requirements.txt&amp;nbsp;file.&lt;/p&gt;
+&lt;p&gt;I call the invoke task to create the (local) gh-pages branch with the published&amp;nbsp;contents.&lt;/p&gt;
+&lt;p&gt;Finally, I force push the gh-pages branch to GitHub, using the required&amp;nbsp;credentials.&lt;/p&gt;</content><category term="pelican"></category><category term="pelican"></category><category term="gh-pages"></category><category term="gh-actions"></category></entry></feed>
