@@ -9,7 +9,7 @@ PATH = 'content'
 AUTHOR = 'Charles Brunet'
 SITENAME = 'Charles Brunet'
 SITETITLE = 'Charles Brunet'
-SITESUBTITLE = 'Me, Myself, and I'
+SITESUBTITLE = 'Me, mturnyself, and I'
 SITEDESCRIPTION = 'Le site de Charles Brunet website'
 SITELOGO = SITEURL + "/images/cbrunet.jpg"
 # FAVICON
@@ -26,6 +26,7 @@ DISABLE_URL_HASH = True
 STATIC_PATHS = ["extra/cbrunet.css", "images/cbrunet.jpg"]
 EXTRA_PATH_METADATA = {
     "extra/cbrunet.css": {"path": "static/cbrunet.css"},
+    "extra/CNAME": {"path": "CNAME"},
 }
 CUSTOM_CSS = "static/cbrunet.css"
 
