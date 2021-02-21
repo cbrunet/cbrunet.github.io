@@ -9,7 +9,7 @@ PATH = 'content'
 AUTHOR = 'Charles Brunet'
 SITENAME = 'Charles Brunet'
 SITETITLE = 'Charles Brunet'
-SITESUBTITLE = 'Me, mturnyself, and I'
+SITESUBTITLE = 'Me, myself, and I'
 SITEDESCRIPTION = 'Le site de Charles Brunet website'
 SITELOGO = SITEURL + "/images/cbrunet.jpg"
 # FAVICON
